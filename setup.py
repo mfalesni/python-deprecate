@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name="deprecate",
-    version="1.0",
+    version="1.0.1",
     author="Milan Falešník",
     author_email="milan@falesnik.net",
     description="Python function kwargifier",

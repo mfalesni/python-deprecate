@@ -5,6 +5,7 @@ python:
   - "3.4"
 install:
   - "pip install -U pytest pytest-cov coveralls"
+  - "pip install -e ."
 script: "py.test -v --cov deprecate"
 after_success:
     - coveralls

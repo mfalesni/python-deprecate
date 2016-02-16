@@ -10,3 +10,10 @@ install:
 script: "py.test -v --cov deprecate"
 after_success:
     - coveralls
+deploy:
+  provider: pypi
+  username: mfalesni
+  password:
+    secure: hM8tZTpUZMiH1vvS/Pyy4ku4QYa72Lq+bvinrI3RCtoPBWd6kr9BdgE1cVCkLJYbPpWZ+aUpezX+MnhBW45cdf0xWl+y6/wzjpklB70DkDyTmHd3oi6rS+/KqjcUSw710MU6RbOzWk6LNg3r7MhXQ2IBNbv1Ff6hFMApdzxbFQSqYNncHoIkvs6Au6zO78GqlgkYNjYJ/eZXoFYnrjv5lSxpuRhiF0AdQ3Yn4f7zcY8vVx7ylhCBa62xG41BMi+vhsc5FMUwlzWroLdGDT40rPXqI99VrFlz/yKdq2EeaDt2a89djSfHLuf3gCBvoFhreXNrKEnPbhnM5DyY+5gc1CpKp1GlGOPtZWIkoxbtSdcd7PvI01bPggMqfNsN+OLq5Z94Hc5EYFlRBy7zSGw18NhMe0rAVF7tjnqwW54jXc45kaWQszDHRa2krkYXVP/CEjAs0mart2svAZSBYnjzlN2stMUNqaXseW0C24mlwSM8zinQAwb1F2R2kJY19RWETX/qDL6gIMeTkuQR1Nro9D1o8SL6NM9VdTQWSFImozRIEILsQHqGnW/rBwrYSs+UmPA6y85GrmfC7GnuBVGCG2nCcd+qYyrQ4ycJDPkdGb22H1p1vbH7B+gsiAApxGS5Zq1/GiR9us8QezLV3qhSmfhVN+jSJ7O0ski7K4Wkr+A=
+  on:
+    branch: stable

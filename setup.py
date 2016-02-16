@@ -16,7 +16,8 @@ setup(
     license="GPLv3,MPLv2",
     keywords="deprecate",
     url="https://github.com/mfalesni/python-deprecate",
-    py_modules=["deprecate"],
+    packages=["deprecate"],
+    package_dir={'': 'src'},
     install_requires=[],
     classifiers=[
         "Topic :: Utilities",
@@ -26,6 +27,7 @@ setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Intended Audience :: Developers",
         "Development Status :: 4 - Beta",
     ]

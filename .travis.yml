@@ -1,19 +1,22 @@
 language: python
 python:
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
 install:
-  - "pip install -U pytest pytest-cov coveralls"
-  - "pip install -e ."
-script: "py.test -v --cov deprecate"
+- pip install -U pytest pytest-cov coveralls
+- pip install -e .
+script: py.test -v --cov deprecate
 after_success:
-    - coveralls
+- coveralls
 deploy:
   provider: pypi
-  username: mfalesni
+  user: mfalesni
   password:
-    secure: hM8tZTpUZMiH1vvS/Pyy4ku4QYa72Lq+bvinrI3RCtoPBWd6kr9BdgE1cVCkLJYbPpWZ+aUpezX+MnhBW45cdf0xWl+y6/wzjpklB70DkDyTmHd3oi6rS+/KqjcUSw710MU6RbOzWk6LNg3r7MhXQ2IBNbv1Ff6hFMApdzxbFQSqYNncHoIkvs6Au6zO78GqlgkYNjYJ/eZXoFYnrjv5lSxpuRhiF0AdQ3Yn4f7zcY8vVx7ylhCBa62xG41BMi+vhsc5FMUwlzWroLdGDT40rPXqI99VrFlz/yKdq2EeaDt2a89djSfHLuf3gCBvoFhreXNrKEnPbhnM5DyY+5gc1CpKp1GlGOPtZWIkoxbtSdcd7PvI01bPggMqfNsN+OLq5Z94Hc5EYFlRBy7zSGw18NhMe0rAVF7tjnqwW54jXc45kaWQszDHRa2krkYXVP/CEjAs0mart2svAZSBYnjzlN2stMUNqaXseW0C24mlwSM8zinQAwb1F2R2kJY19RWETX/qDL6gIMeTkuQR1Nro9D1o8SL6NM9VdTQWSFImozRIEILsQHqGnW/rBwrYSs+UmPA6y85GrmfC7GnuBVGCG2nCcd+qYyrQ4ycJDPkdGb22H1p1vbH7B+gsiAApxGS5Zq1/GiR9us8QezLV3qhSmfhVN+jSJ7O0ski7K4Wkr+A=
+    secure: iUQY2gKwE+lI6bR7mja42aGuUSzsQ4EPCyz7BWdDsEN0nDYLsMD3lbecYZwFA5vCGvKm5FJsY98oXouINVimoztwDk4ga2LdEJ4Z5Z0TLPO5w9RdC1b4wQ/4zIBYg2NgrwL68oAVQ6X71JzrZyWpSxGcaPvAbuSVB8B8e3Dti3elqTWRNA/WDt3hEDewnoyvMe9WgGNm+quprppr3uOiBrKKwQ1qztDtgau4x1+SzDZ4AECtyOc7KMxrNQ0J0+/Pb+EKWYZPxKeqWWRl1qYzo9/asMlUVoNI2EDI2PIho/ABta3e7XUm7BFiQi/1yUKYeq2cQgIx47ZfsXokoDwQOJeyKp7fxBOeee8vvJ/b7GKgY/T4UFOpeVO195nPRv7sU0fSVDEV73nsNTkZf1lIn9/uJ2mZAHQqyoiqrGkytBxDOyZttMw6Fhy3hXGI1sHV7E7NmJOmyshB5mlH49GNs1cHJAeARifxV82r08iqoKtPcEB8T9nR3I7ElWI5+Sw4Hbcr2tD7oUQqmfW8Nx3WlryB73y/VH+/gUvbw44W17aeFGSZwrVelqmb1NNt17kHEUJ1JlI6ytg3isg/jnoaDsge52lRzBMa9hZmtC2mr0EledSuKS1YoSKtDu0Xd8rLnWdTfqdUff8L1jOM4AA3xDRDTH2finvqPwXz+Mnmsp4=
   on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: mfalesni/python-deprecate
     branch: stable

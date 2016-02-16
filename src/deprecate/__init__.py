@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Based on https://wiki.python.org/moin/PythonDecoratorLibrary#Generating_Deprecation_Warnings"""
 import warnings
 import functools
 

@@ -19,5 +19,4 @@ def test_warns(deprecated_f):
         deprecated_f()
         assert len(w) == 1
         assert issubclass(w[-1].category, DeprecationWarning)
-        assert str(w[-1].message) == "Call to deprecated function {n}.".format(
-            n=deprecated_f.__name__)
+        assert str(w[-1].message) == "Call to deprecated function {}.".format(deprecated_f.__name__)

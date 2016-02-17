@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
-import pytest
 import warnings
 
 from deprecate import deprecated
 
 
-@pytest.fixture(scope="module")
-def deprecated_f():
-    @deprecated
-    def function():
-        pass
-    return function
+@deprecated
+def deprecated_function():
+    pass
 
 
-def test_warns(deprecated_f):
-    with warnings.catch_warnings(record=True) as w:
-        warnings.simplefilter("always")
-        deprecated_f()
-        assert len(w) == 1
-        assert issubclass(w[-1].category, DeprecationWarning)
-        assert str(w[-1].message) == "Call to deprecated function {}.".format(deprecated_f.__name__)
+def test_warns(recwarn):
+    warnings.simplefilter("always")
+    deprecated_function()
+    assert len(recwarn) == 1
+    w = recwarn.pop(DeprecationWarning)
+    assert issubclass(w.category, DeprecationWarning)
+    assert str(w.message) == "Call to deprecated function {}".format(
+        deprecated_function.__name__)

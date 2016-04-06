@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name="deprecate",
-    version="1.0.4",
+    use_scm_version=True,
     author="Milan Falešník",
     author_email="milan@falesnik.net",
     description="Python deprecating solution.",
@@ -19,6 +19,9 @@ setup(
     packages=["deprecate"],
     package_dir={'': 'src'},
     install_requires=[],
+    setup_requires=[
+        'setuptools_scm',
+    ],
     classifiers=[
         "Topic :: Utilities",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",

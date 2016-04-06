@@ -30,7 +30,7 @@ pygments_style = 'sphinx'
 todo_include_todos = False
 
 
-html_theme = 'alabaster'
+html_theme = 'haiku'
 html_static_path = ['_static']
 
 htmlhelp_basename = 'deprecatedoc'

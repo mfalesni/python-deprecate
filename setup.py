@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name="deprecate",
-    version="1.0.3",
+    version="1.0.4",
     author="Milan Falešník",
     author_email="milan@falesnik.net",
     description="Python deprecating solution.",
